@@ -3,23 +3,14 @@ from flask import Flask, render_template, url_for, request, redirect, jsonify
 app = Flask('app')
 
 
-@app.route('/hello')
-def hello_world():
-    return 'Hello, World!'
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/protein-suggestion', methods=['POST', 'GET'])
+@app.route('/protein-suggestion')
 def protein_suggestion():
-    if request.method == 'POST':
-        # we needa start here for backend
-        pass
-    else:
-        return render_template('protein-rec.html')
+    return render_template('protein-rec.html')
 
 
 @app.route('/calorie-calculator', methods=['POST', 'GET'])
@@ -44,7 +35,7 @@ def calorie_calculator():
         activity = int(user_data['activity'])
 
         goal = int(user_data['goals'])
-        
+
         if imperial == 1:
             weight /= 2.2046
             height *= 2.54
@@ -56,11 +47,10 @@ def calorie_calculator():
         final_calories = 0
 
         if gender == "M":
-            bmr = round(10*weight + 6.25*height - 5*age + 5)
+            bmr = round(10 * weight + 6.25 * height - 5 * age + 5)
         else:
-            bmr = round(10*weight + 6.25*height - 5*age - 161)
+            bmr = round(10 * weight + 6.25 * height - 5 * age - 161)
 
-        
         if activity == 1:
             bmra = round(bmr * 1.2)
         elif activity == 2:
@@ -72,7 +62,6 @@ def calorie_calculator():
         elif activity == 5:
             bmra = round(bmr * 1.9)
 
-        
         if goal == 1:
             final_calories = bmra - 1000
         elif goal == 2:
@@ -88,8 +77,13 @@ def calorie_calculator():
 
         print(name)
 
-        answer = {'bmr': bmr, 'bmr_a': bmra, 'calorie': final_calories, 'protein': protein}
-        
+        answer = {
+            'bmr': bmr,
+            'bmr_a': bmra,
+            'calorie': final_calories,
+            'protein': protein
+        }
+
         return jsonify(answer)
     else:
         return render_template('calorie-calc.html')
