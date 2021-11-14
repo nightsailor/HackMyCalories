@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, jsonify
 
-app = Flask('app')
+app = Flask(__name__)
 
 
 @app.route('/')
@@ -89,4 +89,5 @@ def calorie_calculator():
         return render_template('calorie-calc.html')
 
 
-app.run(host='0.0.0.0', port=8080)
+if __name__ == "__main__":
+    app.run(debug=True)
