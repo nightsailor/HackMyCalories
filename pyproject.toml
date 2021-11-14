@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "repl_python3_Hackfit"
+name = "HackMyCalories"
 version = "0.1.0"
-description = ""
+description = "Hack My Calories"
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
