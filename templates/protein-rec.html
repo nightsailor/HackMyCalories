@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% block head %}
+
+<title>Protein Suggestion</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/protein-rec.css') }}"> {% endblock %} {% block body %}
+
+<div class="container">
+  <div class="logo">
+    <a href="/" style="text-decoration: none">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" class="img-logo" alt="">
+    </a>
+  </div>
+  <div class="content">
+    <div class="contentLeft">
+      <div class="box1">
+        <input id="check01" type="checkbox" name="menu" />
+        <label for="check01">Fat Burn</label>
+        <ul class="submenu">
+          <li><a href="https://www.mensjournal.com/health-fitness/7-high-octane-hiit-workouts-burn-500-calories/" target="_blank">HIIT</a></li>
+          <li><a href="https://www.youtube.com/watch?v=SDhyfxf81nU" target="_blank">Home Workout</a></li>
+          <li><a href="https://www.youtube.com/watch?v=NClHBNxKfqE" target="_blank">Activities vs Calories Burned</a></li>
+          <li><a href="https://www.youtube.com/watch?v=ST1CKHO4XlA" target="_blank">Fat Loss Fundamentals</a></li>
+          <li><a href="https://www.youtube.com/watch?v=nlGsZTsZaFc" target="_blank">Swimming for Weight Loss</a></li>
+          <li><a href="https://www.youtube.com/watch?v=7HXkkanqPKA " target="_blank">Macronutrients Explained</a></li>
+        </ul>
+      </div>
+      <div class="box2"></div>
+    </div>
+    <div class="contentCenter">
+      <div class="box1">
+        <input id="check02" type="checkbox" name="menu" />
+        <label for="check02">Muscle Build</label>
+        <ul class="submenu">
+          <li><a href="https://www.youtube.com/watch?v=TN9i9Ni0Xr4" target="_blank">Fundamentals of Hypertrophy</a></li>
+          <li><a href="https://www.youtube.com/watch?v=nmMaBv5QF3g">Programming Hypertrophy</a></li>
+          <li><a href="https://www.youtube.com/watch?v=ixkQaZXVQjs">Beginner Workout</a></li>
+          <li><a href="https://www.youtube.com/watch?v=9O8mOtdKr44">Volume and Splitting Muscle Group</a></li>
+          <li><a href="https://www.youtube.com/watch?v=FWDXsqHo14A">Best Pushing-Muscle Workout</a></li>
+          <li><a href="https://www.youtube.com/watch?v=tPphF8gepd8">Best Pulling-Muscle Workout</a></li>
+        </ul>
+      </div>
+      <div class="box2"></div>
+    </div>
+    <div class="contentRight">
+      <div class="box1">
+        <input id="check03" type="checkbox" name="menu" />
+        <label for="check03">Mobility</label>
+        <ul class="submenu">
+          <li><a href="https://www.youtube.com/watch?v=NFS0U3X5Aco" target="_blank">Recovery Stretching</a></li>
+          <li><a href="https://www.youtube.com/watch?v=t4A523-O5uk">How to use a Foam Roller</a></li>
+          <li><a href="https://www.youtube.com/watch?v=wCUI1bwlJqA">Yoga For Athletes</a></li>
+          <li><a href="https://www.youtube.com/watch?v=7dT4KHtMM-A">Preworkout Mobilities</a></li>
+          <li><a href="https://www.youtube.com/watch?v=3ew2m3m5f0M">Agility Drills</a></li>
+          <li><a href="https://www.youtube.com/watch?v=L_xrDAtykMI">Beginner Flexbility Routine Follow-Along</a></li>
+        </ul>
+      </div>
+      <div class="box2"></div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/protein-rec.js') }}"></script>
+
+{% endblock %}

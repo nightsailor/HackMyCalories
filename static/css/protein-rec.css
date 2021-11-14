@@ -1,0 +1,157 @@
+@import 'calorie-calc.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap');
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'roboto', sans-serif;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.logo{
+  width: 100%;
+  height: 90px;
+  margin: 0 auto 0;
+  display: flex;
+  position: sticky;
+  justify-content: center;
+  /* background-color: #80bd9e; */
+  /* background-color: #006b38ff; */
+  background-color: #6dafee;
+  
+  
+}
+
+.img-logo{
+  height: 90px;
+}
+
+.content{
+  height: 100%;
+  width: 100%;
+  /* background-color: #89da59; f98866 */
+  /* background-color: #101820ff; */
+  background-color: #edf6ff;
+}
+
+.contentLeft, .contentCenter, .contentRight{
+  /* border: 1px solid white; */
+  flex: 4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.box1{
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  font-family: cursive;
+  font-size: 24px;
+  padding-top: 35%;
+  border-color: red rgba(170, 50, 220, .6) green;
+  border-color: #dddddd;
+}
+
+/*.box2{
+  height: 100%;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}*/
+
+
+input, ul.submenu {
+  display: none;
+  list-style: none;
+  text-decoration: none;
+  margin-top: 15px;
+
+  width: 100%;
+  height: 200px; /* Edited this from 120px */
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+  text-transform: capitalize;
+  color: #383838;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+/*position the label*/
+label {
+  display: block;
+  cursor: pointer;
+}
+
+label{
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #383838;
+    color: #fff;
+    border-radius: 2px;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 30px 0;
+}
+
+/*show the submenu when input is checked*/
+input:checked~ul.submenu {
+  display: block;
+}
+
+li > a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.submenu > li {
+  width: 100%;
+  background-color: #6dafee;
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submenu > li:hover{
+  background-color: #edf6ff;
+  color: #383838;
+}
+
+li > a:hover{
+  color: #383838;
+}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block head %}
+
+<title>Calorie Calculator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calorie-calc.css') }}"> {% endblock %} {% block body %}
+
+<img src="{{ url_for('static', filename='img/loader.gif') }}" class="loader" alt="">
+<div class="container">
+  <div class="logo">
+    <a href="/" style="text-decoration: none">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" class="img-logo" alt="">
+    </a>
+  </div>
+
+  <div class="content">
+    <div class="contentLeft">
+      <input type="text" autocomplete="off" id="name" placeholder="Name">
+      <input type="number" autocomplete="off" id="age" placeholder="Age">
+
+      <select name="gender" id="gender">
+        <option value="" selected disabled hidden>Sex - M / F</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+
+      <input type="number" autocomplete="off" id="height" placeholder="Height">
+      <input type="number" autocomplete="off" id="weight" placeholder="Weight">
+
+      <select name="imperial" id="imperial">
+          <option value="" selected disabled hidden>System - Imperial / Metric</option>
+          <option value=1>Imperial</option>
+          <option value=0>Metric</option>
+      </select>
+
+      <select name="activity" id="activity">
+          <option value="" selected disabled hidden>Activity Level</option>
+          <option value=1>1 Sedentary (little or no exercise, desk job)</option>
+          <option value=2>2 Lightly active (light exercise/ sports 1-3 days/week)</option>
+          <option value=3>3 Moderately active (moderate exercise/ sports 6-7 days/week)</option>
+          <option value=4>4 Very active (hard exercise every day, or exercising 2 xs/day)</option>
+          <option value=5>5 Extra active (hard exercise 2 or more times per day, or training for
+marathon, or triathlon, etc)</option>
+      </select>
+      
+      <select name="goals" id="goals">
+          <option value="" selected disabled hidden>Goals</option>
+          <option value=1>1 Lose weight quickly = Lose 2 lbs/week</option>
+          <option value=2>2 Lose weight moderately = Lose 1 lb/week</option>
+          <option value=3>3 Maintain weight = Maintain</option>
+          <option value=4>4 Gain weight slowly = Gain 0.5 lb/week, recommended for muscle gain</option>
+          <option value=5>5 Gain weight quickly = Gain 1 lb/week</option>
+      </select>
+    </div>
+    <button class="submit-btn">Show Result</button>
+    <div class="contentRight">
+      <input readonly type="text" autocomplete="off" id="bmr" placeholder="BMR - Basic Metabolic Rate">
+      <input readonly type="text" autocomplete="off" id="bmr-a" placeholder="BMR + A - Basic Metabolic Rate + Activity">
+      <input readonly type="text" autocomplete="off" id="calorie" placeholder="Final Calorie Goal">
+      <input readonly type="text" autocomplete="off" id="protien" placeholder="Recommended Protein Intake">
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="alert-box">
+    <img src="{{ url_for('static', filename='img/error.png') }}"  class="alert-img" alt="">
+    <p class="alert-msg">Error message</p>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/calorie-calc.js') }}"></script>
+
+{% endblock %}

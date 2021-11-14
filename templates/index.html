@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block head %}
+
+<title>Health Advisor</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+ crossorigin="anonymous">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+<section class="topbarContainer">
+	<div class="topbarLeft">
+		<a href="/" style="text-decoration: none">
+			<img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" alt="">
+    </a>
+  </div>
+  <div class="topbarRight">
+    <div class="topbarLinks">
+      <a href="/calorie-calculator" class="topbarLink">CALORIE CALCULATOR</a>
+      <!-- <a href="/protein-suggestion" class="topbarLink">FOOD DIARY</a> Disabling this because we didn't complete the food diary  -->
+    </div>
+  </div>
+</section>
+
+<section class="py-5" id="features">
+  <div class="container px-5 my-5">
+    <div class="row gx-5">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h2 class="h4 fw-bolder">Calorie Calculator</h2>
+        <p>
+          You can calculate your body's caloric needs and get recommended protein and calorie intake depending on your weightloss goals.
+          <br />
+          Input your height, weight, activity level to get your Basic Metabolic Rate, BMR + Activity, and recommended protein and calorie intakes. 😎
+        </p>
+        <a
+          class="text-decoration-none"
+          href="{{url_for('calorie_calculator')}}"
+        >
+          Let's Go
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h2 class="h4 fw-bolder">Programs and Educational Videos</h2>
+        <p>
+          If you're trying to lose weight, you may be wondering how much you 
+          should be exercising and what types of exercise you should be doing.
+          <br />
+          Whether your goal is building muscle or burning fat and losing calories, it can recommend the most efficient workouts. 😲
+        </p>
+        <a
+          class="text-decoration-none"
+          href="{{url_for('protein_suggestion')}}"
+        >
+          Let's Go
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+
+{% endblock %}
